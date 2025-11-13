@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  
+
+
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script>
+	 function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+	</script>
+
+
+  <title>Formulario de Contacto</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 520px;
+      box-sizing: border-box;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .mensaje-exito {
+      background-color: #e0ffe0;
+      border: 1px solid #66bb66;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      color: #2e7d32;
+      font-weight: bold;
+      display: none;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      font-weight: 600;
+      color: #444;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 7px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #0066cc;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      margin-top: 16px;
+      width: 100%;
+      background-color: #0066cc;
+      color: #fff;
+      padding: 10px;
+      font-size: 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #004999;
+    }
+
+    select[multiple] {
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="navbar_container">
+      <div class="navbar_logo">
+        <a href="https://enteldigital.cl"><img src="https://enteldigital.cl/hubfs/raw_assets/public/Theme%20Entel%20Digital/images/logo_entel_para_prueba_azul.svg" alt="Entel Digital"></a>
+      </div>
+    </div>
+
+  <div class="form-container">
+    <div id="mensajeExito" class="mensaje-exito"></div>
+
+
+    <h2>Contáctanos</h2>
+
+    <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dbc000003YymP" method="POST">
+
+	<input type=hidden name='captcha_settings' value='{"keyname":"Entel3","fallback":"true","orgId":"00Dbc000003YymP","ts":""}'>
+	<input type=hidden name="oid" value="00Dbc000003YymP">
+	<input type=hidden name="retURL" value="http://">
+	
+    
+      <label for="first_name">Nombre</label>
+      <input id="first_name" name="first_name" type="text" maxlength="40" />
+
+      <label for="last_name">Apellido</label>
+      <input id="last_name" name="last_name" type="text" maxlength="80" />
+
+      <label for="mobile">Teléfono</label>
+      <input id="mobile" name="mobile" type="text" maxlength="40" />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="text" maxlength="80" />
+
+      <label for="company">Empresa</label>
+      <input id="company" name="company" type="text" maxlength="40" />
+
+      <label for="description">Descripción</label>
+      <textarea id="description" name="description" rows="3"></textarea>
+
+      <label for="00Nbc000004v3A9">Producto de Interés:</label><br/>
+		<select  id="00Nbc000004v3A9" multiple="multiple" name="00Nbc000004v3A9" title="Producto de Interés">
+		<option value="Vision">Vision</option>
+		<option value="Servicios SAP para Proyectos AMS">Servicios SAP para Proyectos AMS</option>
+		
+<option value="Analytics">Analytics</option>
+<option value="Aplicaciones">Aplicaciones</option>
+<option value="Cyber Security">Cyber Security</option>
+<option value="Elements">Elements</option>
+<option value="Secure Cloud VMWARE">Secure Cloud VMWARE</option>
+<option value="Smart Mobility">Smart Mobility</option>
+<option value="Soluciones Cloud">Soluciones Cloud</option>
+<option value="Things">Things</option>
+<option value="Vision">Vision</option>
+<option value="Datacenter">Datacenter</option>
+<option value="EUS">EUS</option>
+<option value="Infraestructura HW/SW">Infraestructura HW/SW</option>
+<option value="ITO">ITO</option>
+<option value="SAP">SAP</option>
+		</select><br>
+
+      <br/>
+
+      <label for="lead_source">Lead Source</label>
+      <select id="lead_source" name="lead_source">
+        <option value="Campaña">Campaña</option>
+        <option value="Correo Electrónico">Correo Electrónico</option>
+        <option value="Evento">Evento</option>
+        <option value="Formulario Web">Formulario Web</option>
+        <option value="Referido">Referido</option>
+        <option value="RRSS">RRSS</option>
+        <option value="Teléfono">Teléfono</option>
+		<option value="Teléfono">Teléfono</option>
+		<option value="Jugada Comercial">Jugada Comercial</option>
+      </select>
+
+
+	  <div class="g-recaptcha" data-sitekey="6LfHwAssAAAAAKFTTC9-k9HEyvoOQy50_UlwoCA4"></div><br>
+      <input type="submit" name="submit">
+
+
+    </form>
+  </div>
+
+</body>
+</html>
